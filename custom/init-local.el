@@ -9,6 +9,8 @@
       [?\M-m C-tab ?\C-e ?\M-\;])
 (fset 'my-uncomment
       [?\M-m C-tab ?\C-e ?\M-\;])
+(fset 'my-task-end
+   [?\M-> ?\C-p tab ?\M-> ?\C-p tab ?\M->])
 ;;打开最近访问tabletable文件
 (defvar recentf-list)
 (defun my-recentf-open ()
@@ -109,9 +111,12 @@ instead."
              (t (error "Invalid direction")))
             word)
         (error "No symbol found")))))
+
 (global-set-key (kbd "M-n") 'smart-symbol-go-forward)
 (global-set-key (kbd "M-p") 'smart-symbol-go-backward)
 (global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-w") 'whole-line-or-region-kill-ring-save)
+(global-set-key (kbd "C-w") 'whole-line-or-region-kill-region)
 (global-set-key (kbd "C-\+") 'mc/mark-next-like-this)
 (global-set-key (kbd "M-<f12>") 'magit-status)
 (define-key global-map [f1] 'my-recentf-open)
@@ -119,7 +124,8 @@ instead."
 (define-key global-map [f5] 'call-last-kbd-macro)
 (define-key global-map [f10] 'ido-switch-buffer)
 (global-set-key (kbd "C-<f2>")  'org-pomodoro)
-(global-set-key (kbd "C-<f1>")  'pop-global-mark);;返回上一次的光标位置
+;;(global-set-key (kbd "C-<f1>")  'pop-global-mark);;返回上一次的光标位置
+(global-set-key (kbd "C-<f1>")  'goto-last-change);;返回上一次的光标位置
 (define-key global-map [f12] 'my-kill-buffer)
 (define-key global-map (kbd "C-o") 'projectile-find-file)
 (define-key global-map (kbd "C-'") 'duplicate-line)
@@ -127,8 +133,14 @@ instead."
 (define-key global-map (kbd "C-:") 'ace-jump-word-mode)
 (define-key global-map (kbd "C-<up>") 'previous-buffer)
 (define-key global-map (kbd "C-<down>") 'next-buffer)
+(global-set-key [f9]  'bmkp-toggle-autonamed-bookmark-set/delete)
+(global-set-key (kbd "<M-right>")  'bmkp-next-autonamed-bookmark-repeat)
+(global-set-key (kbd "<M-left>")  'bmkp-previous-autonamed-bookmark-repeat)
 (global-set-key (kbd "<C-left>")  'backward-sexp)
 (global-set-key (kbd "<C-right>")  'forward-sexp)
-
+(global-set-key (kbd "C-M-;")  'my-comment)
+(global-set-key (kbd "C-M-'")  'my-uncomment)
+(global-set-key (kbd "C-c t")  'insert-short-time)
+(global-set-key (kbd "C-c d")  'insert-short-day)
 (provide 'init-local)
 ;;; init-local.el ends here
