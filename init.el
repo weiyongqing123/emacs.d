@@ -37,7 +37,8 @@
 (scroll-bar-mode 0)
 ;;tab键替换为空格
 (setq-default indent-tabs-mode nil)
-
+;;winner-mode
+(winner-mode 1)
 ;;Lisp 窗口的自动提示
 (require 'ac-slime)
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
@@ -112,6 +113,13 @@
 ;;eldoc-eval
 (autoload 'eldoc-in-minibuffer-mode "eldoc-eval")
 (eldoc-in-minibuffer-mode 1)
+;;ibuffer 分组 ibuffer-projectile
+(defvar ibuffer-sorting-mode)
+(add-hook 'ibuffer-hook
+          (lambda ()
+            (ibuffer-projectile-set-filter-groups)
+            (unless (eq ibuffer-sorting-mode 'alphabetic)
+              (ibuffer-do-sort-by-alphabetic))))
 ;;退出后保存状态
 (autoload 'save-current-configuration "revive" "Save status" t)
 (autoload 'resume "revive" "Resume Emacs" t)
