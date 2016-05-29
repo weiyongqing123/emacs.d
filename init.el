@@ -14,7 +14,8 @@
  '(custom-enabled-themes (quote (sanityinc-solarized-dark)))
  '(custom-safe-themes
    (quote
-    ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" default))))
+    ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" default)))
+ '(magit-commit-arguments nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -24,6 +25,8 @@
 ;;打开最近文件
 (require 'recentf)
 (recentf-mode 1)
+;; ido-yes-or-no
+(ido-yes-or-no-mode 1)
 ;;自定义的选择
 (global-set-key [(control tab)] 'set-mark-command)
 ;;显示行号
