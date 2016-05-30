@@ -140,6 +140,7 @@ instead."
 (global-set-key (kbd "<C-right>")  'forward-sexp)
 (global-set-key (kbd "C-M-;")  'my-comment)
 (global-set-key (kbd "C-M-'")  'my-uncomment)
+(global-set-key (kbd "C-M-o")  'helm-semantic-or-imenu)
 (global-set-key (kbd "C-c t")  'insert-short-time)
 (global-set-key (kbd "C-c d")  'insert-short-day)
 (provide 'init-local)
