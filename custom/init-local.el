@@ -124,7 +124,7 @@ instead."
 (define-key global-map [f5] 'call-last-kbd-macro)
 (define-key global-map [f10] 'ido-switch-buffer)
 (global-set-key (kbd "C-<f2>")  'org-pomodoro)
-;;(global-set-key (kbd "C-<f1>")  'pop-global-mark);;返回上一次的光标位置
+(global-set-key (kbd "C-\<")  'pop-global-mark);;返回上一次的光标位置
 (global-set-key (kbd "C-<f1>")  'goto-last-change);;返回上一次的光标位置
 (define-key global-map [f12] 'my-kill-buffer)
 (define-key global-map (kbd "C-o") 'projectile-find-file)

@@ -107,8 +107,6 @@
 (move-text-default-bindings)
 ;;checkdoc mode
 (add-hook 'emacs-lisp-mode-hook 'checkdoc-minor-mode)
-;;paredit mode
-(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 ;;eldoc
 (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
