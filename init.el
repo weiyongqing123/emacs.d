@@ -22,7 +22,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-(require 'init-magit)
 ;;打开最近文件
 (require 'recentf)
 (recentf-mode 1)
