@@ -42,6 +42,8 @@
 (setq-default indent-tabs-mode nil)
 ;;winner-mode
 (winner-mode 1)
+;;search下很容易查看occurs
+(define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
 ;;Lisp 窗口的自动提示
 (require 'ac-slime)
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
@@ -127,5 +129,14 @@
 (autoload 'wipe "revive" "Wipe Emacs" t)
 (add-hook 'kill-emacs-hook 'save-current-configuration)
 (add-hook 'emacs-startup-hook 'resume)
+;;org
+(defvar org-startup-indented)
+(setq org-startup-indented t)  ;;缩进模式
+(defvar org-todo-keywords)
+(setq org-todo-keywords
+      (quote ((sequence "TODO(t)" "STARTED(s)" "|" "DONE(d!/!)")
+              (sequence "WAITING(w@/!)" "SOMEDAY(S)" "PROJECT(P@)" "|" "CANCELLED(c@/!)"))))
+(defvar org-clock-in-switch-to-state)
+(setq org-clock-in-switch-to-state "STARTED")
 (require 'init-local)
 ;;; init.el ends here
