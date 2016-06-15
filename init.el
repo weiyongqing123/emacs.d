@@ -11,6 +11,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(custom-enabled-themes (quote (sanityinc-solarized-dark)))
  '(custom-safe-themes
    (quote
@@ -25,6 +26,8 @@
 ;;打开最近文件
 (require 'recentf)
 (recentf-mode 1)
+(setq recentf-max-menu-items 45)
+(global-set-key (kbd "C-c C-r") 'recentf-open-files)
 ;; ido-yes-or-no
 (ido-yes-or-no-mode 1)
 ;;自定义的选择
@@ -42,6 +45,8 @@
 (setq-default indent-tabs-mode nil)
 ;;winner-mode
 (winner-mode 1)
+;;去掉启动页面
+(setq inhibit-startup-message t)
 ;;search下很容易查看occurs
 (define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
 ;;Lisp 窗口的自动提示
@@ -104,7 +109,16 @@
 ;;窗口编号
 (require 'window-numbering )
 (window-numbering-mode 1)
-;;alt
+;;选中区域覆盖重写
+(cua-selection-mode t)
+;;----------------------------------------------------------------------------
+;; Zap *up* to char is a more sensible default
+;;----------------------------------------------------------------------------
+(autoload 'zap-up-to-char "misc" "Kill up to, but not including ARGth occurrence of CHAR.")
+(global-set-key (kbd "M-z") 'zap-up-to-char)
+(global-set-key (kbd "M-Z") 'zap-to-char)
+
+;;alt up
 (require 'move-text)
 (move-text-default-bindings)
 ;;checkdoc mode
@@ -138,5 +152,6 @@
               (sequence "WAITING(w@/!)" "SOMEDAY(S)" "PROJECT(P@)" "|" "CANCELLED(c@/!)"))))
 (defvar org-clock-in-switch-to-state)
 (setq org-clock-in-switch-to-state "STARTED")
+
 (require 'init-local)
 ;;; init.el ends here

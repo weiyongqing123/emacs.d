@@ -1,0 +1,5 @@
+# name:laravel-view-@foreach
+# key: vforeach
+# --
+@foreach($$1 as  $index => $item)
+@endforeach

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: json value get
+# key: jsget
+# --
+($1 \ "$2").get
