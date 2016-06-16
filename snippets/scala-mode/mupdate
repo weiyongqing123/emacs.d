@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+#Author : Jonas Bonèr <jonas@jonasboner.com>
+#name :     collect.update(...,...)
+# key: mupdate
+# --
+${1:collect}.update(Json.obj("$2" -> ($3 \ "$4").get), Json.obj("$set" -> Json.obj("$5" -> ($3 \ "$6").get))).map { r =>
+  $7
+}

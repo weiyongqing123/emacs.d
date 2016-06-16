@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#Author : Jonas Bonèr <jonas@jonasboner.com>
+#name :     val params:JsValue  = req.body.asJson.get
+# key: pparam
+# --
+val ${1:params}:JsValue  = req.body.asJson.get

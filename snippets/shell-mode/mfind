@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: mongo find
+# key: mfind
+# --
+db.${1:players}.find({$2})

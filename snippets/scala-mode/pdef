@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+#Author : Jonas Bonèr <jonas@jonasboner.com>
+#name : def f = Action.async { implicit req => ...}
+# key: pdef
+# --
+def ${1:name} = Action.async { implicit req =>
+  $0
+}

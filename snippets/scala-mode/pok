@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#Author : Jonas Bonèr <jonas@jonasboner.com>
+#name :    Ok(Json.toJson(...))
+# key: pok
+# --
+Ok(Json.toJson(${1:JsString("ok")}))
