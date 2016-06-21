@@ -10,7 +10,18 @@
 (fset 'my-uncomment
       [?\M-m C-tab ?\C-e ?\M-\;])
 (fset 'my-task-end
-   [?\M-> ?\C-p tab ?\M-> ?\C-p tab ?\M->])
+      [?\M-> ?\C-p tab ?\M-> ?\C-p tab ?\M->])
+(fset 'my-copy-word
+      [?\C-= ?\M-w])
+;;导航到文件指定的方法
+(fset 'my-find-file-dwim
+   [?\C-\M-w ?\M-b ?\C-c ?p ?g ?\C-s ?\C-y return])
+(fset 'my-find-file-php
+   [?\C-\M-w ?\M-b ?\C-\M-w ?\C-o ?\C-y ?. ?p ?h ?p return ?\M-< ?\C-s ?\C-y ?\M-y return])
+(fset 'my-find-file-scala
+   [?\C-\M-w ?\M-b ?\C-\M-w ?\C-o ?\C-y ?. ?s ?c ?a ?l ?a return ?\M-< ?\C-s ?d ?e ?f ?  ?\C-y ?\M-y return])
+
+
 ;;打开最近访问tabletable文件
 (defvar recentf-list)
 (defun my-recentf-open ()
@@ -133,14 +144,17 @@ instead."
 (define-key global-map (kbd "C-:") 'ace-jump-word-mode)
 (define-key global-map (kbd "C-<up>") 'previous-buffer)
 (define-key global-map (kbd "C-<down>") 'next-buffer)
+(define-key global-map (kbd " C-M-d") 'kill-whole-line)
 (global-set-key [f9]  'bmkp-toggle-autonamed-bookmark-set/delete)
 (global-set-key (kbd "<M-right>")  'bmkp-next-autonamed-bookmark-repeat)
 (global-set-key (kbd "<M-left>")  'bmkp-previous-autonamed-bookmark-repeat)
 (global-set-key (kbd "<C-left>")  'backward-sexp)
 (global-set-key (kbd "<C-right>")  'forward-sexp)
+(global-set-key (kbd "C-M->")  'my-task-end)
 (global-set-key (kbd "C-M-;")  'my-comment)
 (global-set-key (kbd "C-M-'")  'my-uncomment)
 (global-set-key (kbd "C-M-o")  'helm-semantic-or-imenu)
+(global-set-key (kbd "C-M-w")  'my-copy-word)
 (global-set-key (kbd "C-c t")  'insert-short-time)
 (global-set-key (kbd "C-c d")  'insert-short-day)
 (provide 'init-local)
