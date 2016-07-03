@@ -20,6 +20,8 @@
    [?\C-\M-w ?\M-b ?\C-\M-w ?\C-o ?\C-y ?. ?p ?h ?p return ?\M-< ?\C-s ?\C-y ?\M-y return])
 (fset 'my-find-file-scala
    [?\C-\M-w ?\M-b ?\C-\M-w ?\C-o ?\C-y ?. ?s ?c ?a ?l ?a return ?\M-< ?\C-s ?d ?e ?f ?  ?\C-y ?\M-y return])
+(fset 'my-find-file-js
+   [?\C-\M-w ?\M-b ?\C-\M-w ?\C-o ?\C-y ?. ?c ?o ?n ?t ?r ?o ?l ?l ?e ?r ?. ?j ?s return ?\M-< ?\C-s ?f ?u ?n ?c ?t ?i ?o ?n ?  ?\C-y ?\M-y ?\( return])
 
 
 ;;打开最近访问tabletable文件
@@ -140,8 +142,8 @@ instead."
 (define-key global-map [f12] 'my-kill-buffer)
 (define-key global-map (kbd "C-o") 'projectile-find-file)
 (define-key global-map (kbd "C-'") 'duplicate-line)
-(define-key global-map (kbd "C-\"") 'ace-jump-char-mode)
-(define-key global-map (kbd "C-:") 'ace-jump-word-mode)
+(define-key global-map (kbd "C-:") 'ace-jump-char-mode)
+(define-key global-map (kbd "C-;") 'ace-jump-word-mode)
 (define-key global-map (kbd "C-<up>") 'previous-buffer)
 (define-key global-map (kbd "C-<down>") 'next-buffer)
 (define-key global-map (kbd " C-M-d") 'kill-whole-line)
@@ -155,7 +157,9 @@ instead."
 (global-set-key (kbd "C-M-'")  'my-uncomment)
 (global-set-key (kbd "C-M-o")  'helm-semantic-or-imenu)
 (global-set-key (kbd "C-M-w")  'my-copy-word)
-(global-set-key (kbd "C-c t")  'insert-short-time)
 (global-set-key (kbd "C-c d")  'insert-short-day)
+(global-set-key (kbd "C-c m")  'my-find-file-php)
+(global-set-key (kbd "C-c t")  'insert-short-time)
+
 (provide 'init-local)
 ;;; init-local.el ends here
