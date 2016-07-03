@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name:             vm.messageSender["broadcast"]["showSell"]();
+# key: send
+# --
+vm.messageSender["$1"]["$2"]($3);

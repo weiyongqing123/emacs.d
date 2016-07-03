@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: vm.ws.send(JSON.stringify({
+# key: sender
+# --
+$1: function(){
+    vm.ws.send(JSON.stringify({
+        type: "$2",
+              msg: {
+                        action: "$1"
+                   }
+         }));
+     }

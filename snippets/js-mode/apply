@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name:  $scope.$apply();  
+# key: apply
+# --
+$scope.$apply();

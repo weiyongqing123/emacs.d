@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: action: function(msg) {---}
+# key: receiver
+# --
+$1: function(msg){
+    $2
+}
